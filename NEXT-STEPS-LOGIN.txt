@@ -1,0 +1,10 @@
+GRACE & FREEDOM - LOGIN VISIBILITY UPDATE
+
+1. Unzip this archive locally.
+2. Upload its contents (not the containing directory and not the ZIP) to the ROOT of your private GitHub repository. Replace old index.html and commit.
+3. In Render, use the service connected to that repo and main branch. Docker runtime, Dockerfile ./Dockerfile, Docker context . . Deploy the latest commit, or wait for auto-deploy.
+4. Visit https://grace-and-freedom1.onrender.com/login.html directly, and the homepage. The top header should show Sign In and the homepage should have a large account access panel.
+5. In Render Environment set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY based on your Supabase project, then save/deploy. In Supabase Authentication URL Configuration set Site URL and redirect allowlist for your actual Render domain.
+6. If the login link is still not visible, open the site in a private/incognito window and check Render deploy logs/commit hash. You may be looking at an older deployment.
+
+NOTE: This release improves access to the existing Supabase login flow. It does NOT activate Stripe subscriptions or finalize production-grade security review. The original financial calculator still has demonstration data in browser storage, separate from the protected private workspace. Never store real customer data there.

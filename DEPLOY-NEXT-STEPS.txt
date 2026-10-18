@@ -1,0 +1,13 @@
+GRACE & FREEDOM - RENDER WEB SERVICE (DOCKER)
+
+1. UNZIP this archive on your computer. Upload its CONTENTS (not the ZIP, not a containing folder) into the ROOT of your private GitHub repository, then commit to main.
+2. Open Render > your Grace & Freedom WEB SERVICE > Settings.
+3. Check: repository is your new GitHub Grace & Freedom repo; branch is main; runtime is Docker; Dockerfile path ./Dockerfile; Docker context .; Docker command blank.
+4. Open Events/Deploys. If Auto Deploy is on, a commit triggers the deploy; otherwise use Manual Deploy > Deploy latest commit.
+5. If the deployment fails, open its build or runtime logs and copy the LAST 25-40 lines (redact keys) for troubleshooting.
+6. When live, test /, /app.html, /join.html, /welcome.html, /api/status on your new onrender.com address. The API status reports email/stripe/coach false until credentials are configured; that's expected.
+7. Only AFTER the core site works, use Environment to add OPENAI_API_KEY, RESEND_API_KEY, EMAIL_FROM and the optional Stripe settings documented in env.example. Never commit real secrets.
+
+IMPORTANT: The app is a prototype. It does NOT implement secure member login or Stripe webhook-based entitlement verification. Do not onboard real paying customers or allow sensitive financial data until those features are implemented and security-reviewed. The coaching endpoint is not gated by paid authentication.
+
+If the URL still fails to load, check Render's displayed service URL and dashboard status (Live/Build failed/Deploy failed). A public URL alone cannot identify the deployment error.

@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: grace-and-freedom
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: false
